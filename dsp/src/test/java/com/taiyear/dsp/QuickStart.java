@@ -19,19 +19,20 @@ import org.springframework.web.WebApplicationInitializer;
  * 
  */
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.taiyear.dsp"})
-public class QuickStart extends SpringBootServletInitializer
-		implements EmbeddedServletContainerCustomizer, WebApplicationInitializer {
-	
+@ComponentScan(basePackages = { "com.taiyear.dsp" })
+public class QuickStart extends SpringBootServletInitializer implements
+		EmbeddedServletContainerCustomizer, WebApplicationInitializer {
+
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(QuickStart.class, args);
 	}
 
 	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+	protected SpringApplicationBuilder configure(
+			SpringApplicationBuilder builder) {
 		return builder.sources(QuickStart.class);
 	}
-	
+
 	@Override
 	public void customize(ConfigurableEmbeddedServletContainer container) {
 		container.setContextPath("/dsp");

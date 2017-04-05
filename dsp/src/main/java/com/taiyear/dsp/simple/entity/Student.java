@@ -9,13 +9,13 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.taiyear.dsp.simple.AbstractEntity;
+import com.taiyear.dsp.base.AbstractEntity;
 
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * @author liul
- *
+ * 
  */
 @Entity
 @Table(name = "t_simple_student")
@@ -24,11 +24,11 @@ public class Student extends AbstractEntity {
 	@ApiModelProperty("学生姓名")
 	@Column(name = "name", length = 255)
 	private String name;
-	
+
 	@ApiModelProperty("学生电话")
 	@Column(name = "mobile", length = 255)
 	private String mobile;
-	
+
 	@ApiModelProperty("老师")
 	@OneToOne(fetch = FetchType.LAZY)
 	private Teacher teacher;
